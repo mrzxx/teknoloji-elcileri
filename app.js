@@ -16,6 +16,7 @@ const errorHandler = require('./middleware/error');
 const authMiddleware = require('./middleware/auth');
 //Route's here.
 const authRoutes = require('./routes/auth');
+const generalRoutes = require('./routes/general');
 
 
 app.use(bodyParser.json());
@@ -40,12 +41,14 @@ app.use(
 );
 
 
+
+//Regıster/Logın here.
+app.use(authRoutes);
+
 //Auth module here.
 app.use(authMiddleware);
 
-//Routes here.
-app.use(authRoutes);
-
+app.use(generalRoutes);
 
 //Error handler here.
 app.use(errorHandler);
