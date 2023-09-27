@@ -40,7 +40,7 @@ app.use(
     })
 );
 
-
+db.sync({force:true});
 
 //Regıster/Logın here.
 app.use(authRoutes);

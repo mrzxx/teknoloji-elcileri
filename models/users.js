@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = require('../database/database');
+const Role = require('./roles');
 
 const User = sequelize.define('user', {
     id: {
@@ -53,4 +54,6 @@ const User = sequelize.define('user', {
     departmentId: Sequelize.INTEGER,
     classId: Sequelize.INTEGER
 });
+
+User.hasOne(Role);
 module.exports = User;
