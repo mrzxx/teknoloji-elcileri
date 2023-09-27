@@ -40,13 +40,13 @@ app.use(
     })
 );
 
-db.sync({force:true});
+db.sync();
 
 //Regıster/Logın here.
 app.use(authRoutes);
 
 //Auth module here.
-app.use(authMiddleware);
+//app.use(authMiddleware);
 
 app.use(generalRoutes);
 

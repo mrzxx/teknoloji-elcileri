@@ -55,5 +55,5 @@ const User = sequelize.define('user', {
     classId: Sequelize.INTEGER
 });
 
-User.hasOne(Role);
+User.belongsTo(Role);
 module.exports = User;
